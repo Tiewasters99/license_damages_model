@@ -1,1 +1,506 @@
-https://license-damages-model-git-main-quainton-law.vercel.app/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Amendment Breach of Contract Damages Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .panel h2 {
+            color: #1e40af;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e2e8f0;
+        }
+        
+        .inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .input-group h3 {
+            color: #475569;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .input-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .input-row label {
+            font-weight: 500;
+            color: #64748b;
+        }
+        
+        .input-row input {
+            width: 100px;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        .input-row input[type="checkbox"] {
+            width: auto;
+            transform: scale(1.2);
+        }
+        
+        .calculate-btn {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px -1px rgba(59, 130, 246, 0.4);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #cbd5e1;
+        }
+        
+        .result-card h3 {
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .result-card .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            font-family: 'SF Mono', Consolas, monospace;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 14px;
+        }
+        
+        th {
+            background: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #f8fafc;
+        }
+        
+        .number {
+            font-family: 'SF Mono', Consolas, monospace;
+            font-weight: 500;
+        }
+        
+        .total-row {
+            background: #fef3c7;
+            font-weight: 600;
+        }
+        
+        .total-row td {
+            border-top: 2px solid #f59e0b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>License Amendment Breach of Contract Damages Model</h1>
+            <p>In-Sink Pre-AER Cleaning Market | Royalty-Based NPV Analysis</p>
+        </div>
+        
+        <div class="panel">
+            <h2>Model Parameters</h2>
+            <div class="inputs">
+                <div class="input-group">
+                    <h3>Market Size</h3>
+                    <div class="input-row">
+                        <label>US Procedures (M/year):</label>
+                        <input type="number" id="usProcedures" value="35" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>ROW Procedures (M/year):</label>
+                        <input type="number" id="rowProcedures" value="75" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>Cost per Procedure ($):</label>
+                        <input type="number" id="costPerProcedure" value="9" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>US Market Growth (%):</label>
+                        <input type="number" id="usMarketGrowth" value="8.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>ROW Market Growth (%):</label>
+                        <input type="number" id="rowMarketGrowth" value="10.0" step="0.1">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <h3>US Market Share</h3>
+                    <div class="input-row">
+                        <label>2025 Start (%):</label>
+                        <input type="number" id="usStart" value="1.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>2030 Target (%):</label>
+                        <input type="number" id="us2030" value="25.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>Long-term (%):</label>
+                        <input type="number" id="usLongTerm" value="30.0" step="0.1">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <h3>ROW Market Share</h3>
+                    <div class="input-row">
+                        <label>2025 Start (%):</label>
+                        <input type="number" id="rowStart" value="0.25" step="0.01">
+                    </div>
+                    <div class="input-row">
+                        <label>2030 Target (%):</label>
+                        <input type="number" id="row2030" value="5.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>Long-term (%):</label>
+                        <input type="number" id="rowLongTerm" value="5.5" step="0.1">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <h3>Financial Parameters</h3>
+                    <div class="input-row">
+                        <label>Royalty Rate (%):</label>
+                        <input type="number" id="royaltyRate" value="5.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>US Discount Rate (%):</label>
+                        <input type="number" id="usDiscountRate" value="8.0" step="0.1">
+                    </div>
+                    <div class="input-row">
+                        <label>ROW Discount Rate (%):</label>
+                        <input type="number" id="rowDiscountRate" value="10.0" step="0.1">
+                    </div>
+                </div>
+            </div>
+            <button class="calculate-btn" onclick="calculateDamages()">Calculate Damages Model</button>
+        </div>
+        
+        <div class="panel">
+            <h2>Damage Assessment Results</h2>
+            <div class="results-grid">
+                <!-- Row 1: 2040 Analysis -->
+                <div class="result-card">
+                    <h3>NPV Damages (if to 2040)</h3>
+                    <div class="value" id="damages2040">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>US Component (2040)</h3>
+                    <div class="value" id="usComponent2040">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>ROW Component (2040)</h3>
+                    <div class="value" id="rowComponent2040">$0.0M</div>
+                </div>
+                
+                <!-- Row 2: 2045 Analysis -->
+                <div class="result-card">
+                    <h3>NPV Damages (if to 2045)</h3>
+                    <div class="value" id="damages2045">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>US Component (2045)</h3>
+                    <div class="value" id="usComponent2045">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>ROW Component (2045)</h3>
+                    <div class="value" id="rowComponent2045">$0.0M</div>
+                </div>
+                
+                <!-- Row 3: Treble Damages & Attorney Fees -->
+                <div class="result-card">
+                    <h3>Treble Damages (if to 2040)</h3>
+                    <div class="value" id="treble2040">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>Treble Damages (if to 2045)</h3>
+                    <div class="value" id="treble2045">$0.0M</div>
+                </div>
+                <div class="result-card">
+                    <h3>Attorney Fees</h3>
+                    <input type="number" id="attorneyFees" value="5.0" step="0.1" min="0" style="width: 80px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center; font-size: 16px; font-weight: 600; margin-top: 5px;">
+                    <div style="font-size: 12px; color: #64748b; margin-top: 5px;">$M</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <h2>Year-by-Year Projections</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>US Market ($M)</th>
+                            <th>US Share (%)</th>
+                            <th>US Revenue ($M)</th>
+                            <th>US Royalty ($M)</th>
+                            <th>ROW Market ($M)</th>
+                            <th>ROW Share (%)</th>
+                            <th>ROW Revenue ($M)</th>
+                            <th>ROW Royalty ($M)</th>
+                            <th>NPV Contribution ($M)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectionTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateDamages() {
+            // Get all input values
+            const params = {
+                usProcedures: parseFloat(document.getElementById('usProcedures').value),
+                rowProcedures: parseFloat(document.getElementById('rowProcedures').value),
+                costPerProcedure: parseFloat(document.getElementById('costPerProcedure').value),
+                usMarketGrowth: parseFloat(document.getElementById('usMarketGrowth').value) / 100,
+                rowMarketGrowth: parseFloat(document.getElementById('rowMarketGrowth').value) / 100,
+                usStart: parseFloat(document.getElementById('usStart').value) / 100,
+                us2030: parseFloat(document.getElementById('us2030').value) / 100,
+                usLongTerm: parseFloat(document.getElementById('usLongTerm').value) / 100,
+                rowStart: parseFloat(document.getElementById('rowStart').value) / 100,
+                row2030: parseFloat(document.getElementById('row2030').value) / 100,
+                rowLongTerm: parseFloat(document.getElementById('rowLongTerm').value) / 100,
+                royaltyRate: parseFloat(document.getElementById('royaltyRate').value) / 100,
+                usDiscountRate: parseFloat(document.getElementById('usDiscountRate').value) / 100,
+                rowDiscountRate: parseFloat(document.getElementById('rowDiscountRate').value) / 100
+            };
+            
+            // Calculate base market sizes (2025)
+            const baseUSMarket = params.usProcedures * params.costPerProcedure;
+            const baseROWMarket = params.rowProcedures * params.costPerProcedure;
+            
+            // Initialize totals
+            let totalUSNPV = 0;
+            let totalROWNPV = 0;
+            let npv2040US = 0;
+            let npv2040ROW = 0;
+            
+            // Clear and rebuild table
+            const tbody = document.getElementById('projectionTable');
+            tbody.innerHTML = '';
+            
+            // Calculate for 21 years (2025-2045)
+            for (let year = 0; year < 21; year++) {
+                const currentYear = 2025 + year;
+                
+                // Calculate growing market sizes (compound annual growth)
+                const yearlyUSMarket = baseUSMarket * Math.pow(1 + params.usMarketGrowth, year);
+                const yearlyROWMarket = baseROWMarket * Math.pow(1 + params.rowMarketGrowth, year);
+                
+                // Calculate market share progression
+                let usShare, rowShare;
+                
+                if (year <= 5) {
+                    // Linear ramp 2025-2030
+                    usShare = params.usStart + (params.us2030 - params.usStart) * (year / 5);
+                    rowShare = params.rowStart + (params.row2030 - params.rowStart) * (year / 5);
+                } else {
+                    // Growth toward long-term targets post-2030
+                    const postYears = year - 5;
+                    const growthRate = 0.02;
+                    usShare = params.us2030 + (params.usLongTerm - params.us2030) * (1 - Math.exp(-growthRate * postYears));
+                    rowShare = params.row2030 + (params.rowLongTerm - params.row2030) * (1 - Math.exp(-growthRate * postYears));
+                }
+                
+                // Calculate revenues and royalties (now based on growing markets)
+                const usRevenue = yearlyUSMarket * usShare;
+                const rowRevenue = yearlyROWMarket * rowShare;
+                const usRoyalty = usRevenue * params.royaltyRate;
+                const rowRoyalty = rowRevenue * params.royaltyRate;
+                
+                // Calculate NPV factors
+                const usNPVFactor = 1 / Math.pow(1 + params.usDiscountRate, year + 1);
+                const rowNPVFactor = 1 / Math.pow(1 + params.rowDiscountRate, year + 1);
+                
+                // Calculate NPV contributions
+                const usNPVContrib = usRoyalty * usNPVFactor;
+                const rowNPVContrib = rowRoyalty * rowNPVFactor;
+                const totalNPVContrib = usNPVContrib + rowNPVContrib;
+                
+                // Add to totals
+                totalUSNPV += usNPVContrib;
+                totalROWNPV += rowNPVContrib;
+                
+                // Track 2040 totals (years 0-15)
+                if (year <= 15) {
+                    npv2040US += usNPVContrib;
+                    npv2040ROW += rowNPVContrib;
+                }
+                
+                // Add table row
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${currentYear}</td>
+                    <td class="number">${yearlyUSMarket.toFixed(1)}M</td>
+                    <td class="number">${(usShare * 100).toFixed(1)}%</td>
+                    <td class="number">${usRevenue.toFixed(1)}M</td>
+                    <td class="number">${usRoyalty.toFixed(1)}M</td>
+                    <td class="number">${yearlyROWMarket.toFixed(1)}M</td>
+                    <td class="number">${(rowShare * 100).toFixed(1)}%</td>
+                    <td class="number">${rowRevenue.toFixed(1)}M</td>
+                    <td class="number">${rowRoyalty.toFixed(1)}M</td>
+                    <td class="number">${totalNPVContrib.toFixed(1)}M</td>
+                `;
+            }
+            
+            // Add totals row
+            const totalRow = tbody.insertRow();
+            totalRow.className = 'total-row';
+            totalRow.innerHTML = `
+                <td><strong>TOTALS</strong></td>
+                <td colspan="2"><strong>US NPV: ${totalUSNPV.toFixed(1)}M</strong></td>
+                <td colspan="2"></td>
+                <td colspan="2"><strong>ROW NPV: ${totalROWNPV.toFixed(1)}M</strong></td>
+                <td colspan="3"><strong>Total NPV: ${(totalUSNPV + totalROWNPV).toFixed(1)}M</strong></td>
+            `;
+            
+            // Calculate final values
+            const damages2040 = npv2040US + npv2040ROW;
+            const damages2045 = totalUSNPV + totalROWNPV;
+            
+            // Calculate treble damages (3x base damages, not conditional multiplier)
+            const treble2040Value = damages2040 * 3;
+            const treble2045Value = damages2045 * 3;
+            
+            // Update result cards
+            document.getElementById('damages2040').textContent = `${damages2040.toFixed(1)}M`;
+            document.getElementById('damages2045').textContent = `${damages2045.toFixed(1)}M`;
+            document.getElementById('usComponent2040').textContent = `${npv2040US.toFixed(1)}M`;
+            document.getElementById('rowComponent2040').textContent = `${npv2040ROW.toFixed(1)}M`;
+            document.getElementById('usComponent2045').textContent = `${totalUSNPV.toFixed(1)}M`;
+            document.getElementById('rowComponent2045').textContent = `${totalROWNPV.toFixed(1)}M`;
+            document.getElementById('treble2040').textContent = `${treble2040Value.toFixed(1)}M`;
+            document.getElementById('treble2045').textContent = `${treble2045Value.toFixed(1)}M`;
+        }
+        
+        // Calculate on page load
+        window.onload = function() {
+            calculateDamages();
+        };
+    </script>
+</body>
+</html>
